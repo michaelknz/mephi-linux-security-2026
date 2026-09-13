@@ -1,0 +1,26 @@
+    1  history -w
+    2  sudo groupadd students
+    3  sudo useradd -u 1234 -G students -m user1
+    4  sudo passwd user1
+    5  sudo chage -M 90 user1
+    6  id user1
+    7  sudo chage -l user1
+    8  sudo find / -perm -4000 -type f 2>/dev/null | tee ~/suid_files.out
+    9  ps -eo pid,ruid,euid,comm | awk 'NR==1 || ($2!=0 && $3==0)' | tee ~/process_search.out
+   10  sudo cp /usr/bin/cat /home/user1/mycat
+   11  sudo chown root:root /home/user1/mycat
+   12  sudo chmod u+s /home/user1/mycat
+   13  ls -l /home/user1/mycat
+   14  sudo ls -l /home/user1/mycat
+   15  cat /etc/shadow
+   16  /home/user1/mycat /etc/shadow
+   17  sudo cp /usr/bin/chown /home/user1/mychown
+   18  sudo setcap cap_chown+ep /home/user1/mychown
+   19  getcap /home/user1/mychown
+   20  sudo getcap /home/user1/mychown
+   21  sudo vim sudo
+   22  sudo dnf install vim
+   23  sudo vim sudo
+   24  sudo visudo
+   25  sudo -l -U user1
+   26  history > ./history.out

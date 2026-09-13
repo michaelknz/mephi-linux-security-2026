@@ -1,0 +1,9 @@
+    1  cat /etc/shadow
+    2  ./mycat /etc/shadow
+    3  touch ~/testfile.txt
+    4  chown daemon ~/testfile.txt
+    5  ./mychown daemon ~/testfile.txt
+    6  ls -l ~/testfile.txt
+    7  sudo date -s "2026-09-11 15:00:00"
+    8  history
+    9  history > ~/history.out
